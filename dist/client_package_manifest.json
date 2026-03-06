@@ -1,0 +1,34 @@
+{
+  "product": "ZeroToHero",
+  "pack_id": "packs_canva_pour_petites_entreprises_1_agences",
+  "generated_utc": "20260306_122725",
+  "theme_id": "brown_pixel_msdos",
+  "client_root": "C:\\Users\\acer travelmate\\.openclaw\\workspace\\dist\\client_package",
+  "internal_root": "C:\\Users\\acer travelmate\\.openclaw\\workspace\\dist\\INTERNAL_do_not_deliver",
+  "resolved_core_docs": [
+    [
+      "offer.md",
+      "01_Offer.md"
+    ],
+    [
+      "sales_page.md",
+      "02_Sales_Page.md"
+    ],
+    [
+      "ad_copy.md",
+      "03_Ad_Copy.md"
+    ],
+    [
+      "email_sequences.md",
+      "04_Email_Sequences.md"
+    ]
+  ],
+  "notes": [
+    "Client package is text-only.",
+    "INTERNAL_do_not_deliver contains specs/checklists for your team.",
+    "This builder supports both old numbered outputs and new orchestrator output names."
+  ],
+  "warnings": [
+    "Missing templates spec folder: build/assets/canva_templates_spec/"
+  ]
+}

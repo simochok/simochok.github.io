@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-03-06T12:21:24.591751Z",
+  "context_ref": "01_openclaw_context.json",
+  "instructions": [
+    {
+      "output_file": "offer.md",
+      "agent": "offer_builder_agent",
+      "instruction": "Tu reçois un contexte produit JSON. Génère une offre marketing complète et adaptée à ce produit spécifique. Le contenu doit être entièrement déduit du contexte fourni : utilise `statement` comme problème central, `keyword` comme marché cible, `notes` comme angle différenciant. Structure requise : (1) Titre de l'offre, (2) Le problème (issu de `statement`), (3) La solution proposée par ce produit, (4) Ce que l'acheteur reçoit concrètement, (5) Pour qui c'est fait, (6) Résultats attendus, (7) CTA. Format de sortie : Markdown. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "expected_output_format": "markdown",
+      "validation": "Vérifie que les 7 sections sont présentes et que le contenu n'est pas générique."
+    },
+    {
+      "output_file": "sales_page.md",
+      "agent": "sales_page_agent",
+      "instruction": "Tu reçois un contexte produit JSON et le fichier `offer.md` généré. Génère une page de vente longue forme adaptée à ce produit. Utilise `keyword` pour personnaliser le titre et les sections. Utilise `statement` comme accroche du problème. Utilise `notes` pour les angles de différenciation. Inclus : headline, sous-titre, bloc problème, bloc solution, liste des livrables, profil acheteur idéal, objections/réponses, garantie (si applicable), CTA avec lien Stripe placeholder. Format de sortie : Markdown. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "depends_on": [
+        "offer.md"
+      ],
+      "expected_output_format": "markdown",
+      "validation": "Vérifie que le CTA et le bloc problème sont présents."
+    },
+    {
+      "output_file": "ad_copy.md",
+      "agent": "ad_copy_agent",
+      "instruction": "Tu reçois un contexte produit JSON et le fichier `offer.md`. Génère des copies publicitaires adaptées à ce produit. Base-toi sur `keyword` pour cibler l'audience, `statement` pour construire les accroches problème, `notes` pour les arguments de différenciation. Produis : (1) 10 accroches courtes (max 15 mots chacune), (2) 5 variantes de corps publicitaire (accroche + problème + solution + CTA), (3) 5 headlines pour A/B test. Format de sortie : Markdown avec sections numérotées. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "depends_on": [
+        "offer.md"
+      ],
+      "expected_output_format": "markdown",
+      "validation": "Vérifie 10 accroches, 5 corps, 5 headlines."
+    },
+    {
+      "output_file": "email_sequences.md",
+      "agent": "email_sequence_agent",
+      "instruction": "Tu reçois un contexte produit JSON et le fichier `offer.md`. Génère une séquence de 5 emails de vente pour ce produit. Adapte chaque email au produit actif : utilise `keyword` pour personnaliser l'audience, `statement` pour le problème, `notes` pour les arguments. Structure de la séquence : Email 1 — Problème (objet + corps + CTA), Email 2 — Solution (objet + corps + CTA), Email 3 — Preuve/bénéfice (objet + corps + CTA), Email 4 — Objection principale (objet + corps + CTA), Email 5 — Urgence/dernière chance (objet + corps + CTA). Format de sortie : Markdown. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "depends_on": [
+        "offer.md"
+      ],
+      "expected_output_format": "markdown",
+      "validation": "Vérifie que les 5 emails ont chacun un objet, un corps et un CTA."
+    },
+    {
+      "output_file": "product_spec.json",
+      "agent": "product_spec_agent",
+      "instruction": "Tu reçois un contexte produit JSON. Génère la spécification technique complète du produit à livrer. Déduis le type de produit (pack digital, workflow, template, outil) depuis `statement`, `keyword` et `notes`. Produis un JSON structuré contenant : `product_type`, `deliverables` (liste des fichiers/éléments livrés), `modules` (si applicable : nom, input, output de chaque module), `delivery_method` (ZIP, lien, etc.), `target_audience`, `setup_required` (true/false + instructions si true). Ne suppose rien : tout doit être déduit du contexte fourni. Format de sortie : JSON strict, sans texte autour. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "expected_output_format": "json",
+      "validation": "Vérifie que product_type, deliverables et delivery_method sont présents."
+    },
+    {
+      "output_file": "openclaw_pipeline_spec.json",
+      "agent": "pipeline_spec_agent",
+      "instruction": "Tu reçois un contexte produit JSON et le fichier `product_spec.json`. Génère la spécification du pipeline OpenClaw pour automatiser ce produit. Pour chaque module dans `product_spec.json > modules` : définis l'agent à appeler, ses paramètres d'entrée typés, son prompt système complet, le format de sortie attendu, et la validation à effectuer sur la sortie. Inclus aussi : `execution_order` (liste ordonnée des agents), `error_handling` (que faire si un agent échoue), `run_frequency` (déduit du type de produit). Format de sortie : JSON strict. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "depends_on": [
+        "product_spec.json"
+      ],
+      "expected_output_format": "json",
+      "validation": "Vérifie que execution_order et error_handling sont présents."
+    },
+    {
+      "output_file": "build_checklist.md",
+      "agent": "checklist_agent",
+      "instruction": "Tu reçois un contexte produit JSON, `product_spec.json` et `openclaw_pipeline_spec.json`. Génère une checklist de production complète et spécifique à ce produit. Organise la checklist en sections : (1) Production du produit (basée sur `product_spec.json > deliverables`), (2) Configuration OpenClaw (basée sur `openclaw_pipeline_spec.json > modules`), (3) Tests et validation, (4) Mise en vente (Stripe, lien, test paiement). Chaque item doit être une case à cocher `- [ ]` avec une action concrète. Ne mets aucun item générique : tout doit référencer les fichiers et agents générés pour ce produit spécifique. Format de sortie : Markdown. Contexte produit :\n{\n  \"id\": \"packs_canva_pour_petites_entreprises_1__agences\",\n  \"statement\": \"Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences\",\n  \"final_score\": 66.0,\n  \"keyword\": \"packs Canva pour petites entreprises\",\n  \"notes\": \"Signal: vendable, visuel, facilement productisable.\",\n  \"extra_evidence\": {}\n}",
+      "depends_on": [
+        "product_spec.json",
+        "openclaw_pipeline_spec.json"
+      ],
+      "expected_output_format": "markdown",
+      "validation": "Vérifie que chaque section contient au moins 3 items."
+    }
+  ]
+}

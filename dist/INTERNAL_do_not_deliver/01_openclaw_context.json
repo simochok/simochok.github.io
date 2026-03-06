@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-03-06T12:21:24.591711Z",
+  "product": {
+    "id": "packs_canva_pour_petites_entreprises_1__agences",
+    "statement": "Consultants B2B digitaux qui font packs Canva pour petites entreprises et n'ont pas de pipeline outbound stable — pour agences",
+    "final_score": 66.0,
+    "keyword": "packs Canva pour petites entreprises",
+    "notes": "Signal: vendable, visuel, facilement productisable.",
+    "extra_evidence": {}
+  },
+  "raw_active_fields": {
+    "metrics": {
+      "MoneyProof": 8,
+      "AcquisitionPain": 9,
+      "RepeatPressure": 8,
+      "Urgency": 8,
+      "TargetClarity": 9,
+      "SaturationPenalty": 5
+    }
+  }
+}

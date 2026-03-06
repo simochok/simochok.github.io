@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-03-06T12:21:24.591821Z",
+  "product_id": "packs_canva_pour_petites_entreprises_1__agences",
+  "keyword": "packs Canva pour petites entreprises",
+  "expected_outputs": [
+    {
+      "file": "offer.md",
+      "agent": "offer_builder_agent",
+      "format": "markdown",
+      "depends_on": [],
+      "status": "running",
+      "cause": "étape lancée",
+      "attempts": 0,
+      "last_error": "",
+      "updated_at": "2026-03-06T12:21:27.000784Z"
+    },
+    {
+      "file": "sales_page.md",
+      "agent": "sales_page_agent",
+      "format": "markdown",
+      "depends_on": [
+        "offer.md"
+      ],
+      "status": "pending",
+      "cause": "",
+      "attempts": 0,
+      "last_error": ""
+    },
+    {
+      "file": "ad_copy.md",
+      "agent": "ad_copy_agent",
+      "format": "markdown",
+      "depends_on": [
+        "offer.md"
+      ],
+      "status": "pending",
+      "cause": "",
+      "attempts": 0,
+      "last_error": ""
+    },
+    {
+      "file": "email_sequences.md",
+      "agent": "email_sequence_agent",
+      "format": "markdown",
+      "depends_on": [
+        "offer.md"
+      ],
+      "status": "pending",
+      "cause": "",
+      "attempts": 0,
+      "last_error": ""
+    },
+    {
+      "file": "product_spec.json",
+      "agent": "product_spec_agent",
+      "format": "json",
+      "depends_on": [],
+      "status": "pending",
+      "cause": "",
+      "attempts": 0,
+      "last_error": ""
+    },
+    {
+      "file": "openclaw_pipeline_spec.json",
+      "agent": "pipeline_spec_agent",
+      "format": "json",
+      "depends_on": [
+        "product_spec.json"
+      ],
+      "status": "pending",
+      "cause": "",
+      "attempts": 0,
+      "last_error": ""
+    },
+    {
+      "file": "build_checklist.md",
+      "agent": "checklist_agent",
+      "format": "markdown",
+      "depends_on": [
+        "product_spec.json",
+        "openclaw_pipeline_spec.json"
+      ],
+      "status": "pending",
+      "cause": "",
+      "attempts": 0,
+      "last_error": ""
+    }
+  ],
+  "bundle_name": "packs_canva_pour_petites_entreprises_1_agences_writing_kit.zip"
+}
