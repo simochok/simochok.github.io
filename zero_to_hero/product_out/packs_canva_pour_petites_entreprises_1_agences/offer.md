@@ -1,5 +1,3 @@
-<!-- ZeroToHero | theme:brown_pixel_msdos -->
-
 # Offre : Le Système "Pack Canva" Prêt à Vendre
 
 ## 1. Le Problème

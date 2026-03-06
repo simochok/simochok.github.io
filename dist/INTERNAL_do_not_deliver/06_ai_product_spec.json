@@ -1,7 +1,7 @@
 {
   "product_type": "template_pack",
   "product_name": "Système Pack Canva Agence",
-  "target_audience": "Agences Marketing, Consultants B2B, Freelances Social Media",
+  "target_audience": "Agences Marketing, Consultants B2B, Freelances",
   "delivery_method": "PDF_with_links",
   "price_point": "49",
   "currency": "EUR",
@@ -9,36 +9,24 @@
     {
       "name": "Master Template Library",
       "format": "Canva Link",
-      "description": "50+ templates réseaux sociaux (Instagram, LinkedIn, FB) neutres et modifiables."
+      "description": "50+ templates réseaux sociaux."
     },
     {
-      "name": "Guide d'Adaptation Rapide",
+      "name": "Guide d'Adaptation",
       "format": "PDF",
-      "description": "Tutoriel pas-à-pas pour changer le branding en 3 clics."
+      "description": "Tutoriel 3 clics."
     },
     {
-      "name": "Kit de Revente / Droits",
+      "name": "Licence Commerciale",
       "format": "PDF",
-      "description": "Licence d'utilisation commerciale pour déploiement client."
+      "description": "Droits pour vos clients."
     },
     {
-      "name": "Bonus Pipeline Outbound",
-      "format": "Text/PDF",
-      "description": "Scripts d'email pour vendre ce service aux clients existants."
-    }
-  ],
-  "modules": [
-    {
-      "name": "Design System",
-      "input": "Brand Colors & Fonts",
-      "output": "Social Media Visuals"
-    },
-    {
-      "name": "Sales Script",
-      "input": "Client List",
-      "output": "Upsell Revenue"
+      "name": "Script Outbound",
+      "format": "Text",
+      "description": "Emails de vente."
     }
   ],
   "setup_required": true,
-  "setup_instructions": "Ouvrir le lien Canva, cliquer sur 'Utiliser le modèle', appliquer son kit de marque."
+  "setup_instructions": "Ouvrir le lien Canva, appliquer son kit de marque."
 }

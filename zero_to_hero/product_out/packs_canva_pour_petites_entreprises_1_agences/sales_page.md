@@ -1,5 +1,3 @@
-<!-- ZeroToHero | theme:brown_pixel_msdos -->
-
 # Sales Page : Système Pack Canva Agence
 
 ## Headline

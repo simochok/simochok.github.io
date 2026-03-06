@@ -1,5 +1,3 @@
-<!-- ZeroToHero | theme:brown_pixel_msdos -->
-
 # Email Sequences : Système Pack Canva Agence
 
 ## Email 1 : Problème

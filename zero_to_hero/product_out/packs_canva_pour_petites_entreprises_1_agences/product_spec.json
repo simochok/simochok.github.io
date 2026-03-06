@@ -1,0 +1,16 @@
+{
+  "product_type": "template_pack",
+  "product_name": "Système Pack Canva Agence",
+  "target_audience": "Agences Marketing, Consultants B2B, Freelances",
+  "delivery_method": "PDF_with_links",
+  "price_point": "49",
+  "currency": "EUR",
+  "deliverables": [
+    {"name": "Master Template Library", "format": "Canva Link", "description": "50+ templates réseaux sociaux."},
+    {"name": "Guide d'Adaptation", "format": "PDF", "description": "Tutoriel 3 clics."},
+    {"name": "Licence Commerciale", "format": "PDF", "description": "Droits pour vos clients."},
+    {"name": "Script Outbound", "format": "Text", "description": "Emails de vente."}
+  ],
+  "setup_required": true,
+  "setup_instructions": "Ouvrir le lien Canva, appliquer son kit de marque."
+}

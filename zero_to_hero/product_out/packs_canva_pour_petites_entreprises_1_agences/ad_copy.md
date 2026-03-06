@@ -1,5 +1,3 @@
-<!-- ZeroToHero | theme:brown_pixel_msdos -->
-
 # Ad Copy : Système Pack Canva Agence
 
 ## Accroches
